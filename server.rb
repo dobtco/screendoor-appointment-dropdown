@@ -1,4 +1,5 @@
 require 'sinatra/base'
+require 'sinatra/cross_origin'
 require 'rack/throttle'
 require 'json'
 require 'active_support/all'
@@ -9,6 +10,8 @@ STORE = MiniCache::Store.new
 
 module ScreendoorAppointmentDropdown
   class App < Sinatra::Base
+    register Sinatra::CrossOrigin
+
     configure :development do
       require 'dotenv'
       Dotenv.load
@@ -19,6 +22,7 @@ module ScreendoorAppointmentDropdown
     end
 
     before do
+      cross_origin allow_origin: :any
       content_type :json
     end
 

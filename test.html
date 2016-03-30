@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>JS Bin</title>
+  <link href="https://d3q1ytufopwvkq.cloudfront.net/0/formrenderer.css" rel="stylesheet" />
+  <script src="https://code.jquery.com/jquery-1.11.2.min.js"></script>
+  <script src="https://d3q1ytufopwvkq.cloudfront.net/0/formrenderer.js"></script>
+</head>
+<body>
+
+<form data-formrenderer>This form requires JavaScript to complete.</form>
+
+<script>
+  var RESPONSE_FIELD_ID = 31173;
+  var fr = new FormRenderer({"project_id":"dKWAUnEjJJ5d3ekq"});
+
+  fr.on('viewRendered', function(view){
+    if (view.optsLoaded) return;
+
+    if (view.$el.hasClass('fr_response_field_dropdown') && view.model.id == RESPONSE_FIELD_ID) {
+      view.model.set('value', '', { silent: true })
+
+      view.
+        $el.
+        find('select').
+        prop('disabled', true).
+          find('option').
+          val('').
+          end()
+
+      $.getJSON("http://localhost:9393/", function(opts){
+        view.optsLoaded = true;
+        var arr = [];
+        for (i in opts) {
+          arr.push({ label: opts[i] })
+        }
+        view.model.set('field_options.options', arr)
+        if (arr[0]) {
+          view.model.set('value', arr[0].label, { silent: true });
+        }
+        view.render()
+      })
+    }
+  })
+</script>
+</body>
+</html>
