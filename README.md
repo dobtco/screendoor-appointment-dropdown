@@ -18,7 +18,9 @@ These parameters were chosen at random -- to customize to your use case, you sho
 3. Embed your form using the code in `test.html`
 4. When a respondent selects a time slot, it will no longer be available to other respondents.
 
-*Note:* Because we cache the response returned from Screendoor's API, there will be a 1-3 minute delay before the selected option is removed from the dropdown.
+*p.s.* Because we cache the response returned from Screendoor's API, there will be a 1-3 minute delay before the selected option is removed from the dropdown.
+
+*p.p.s.* To keep API responses snappy, it's expected that you'll move appointments to an "Archived" status once they occur. You don't need to do this immediately, but the fewer responses outside of this "Archived" status, the faster the form will load.
 
 ## License
 
