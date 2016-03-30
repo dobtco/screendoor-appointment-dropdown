@@ -27,7 +27,7 @@ module ScreendoorAppointmentDropdown
     end
 
     get '/' do
-      # Cache every 5 minutes
+      # Cache every minute
       STORE.get_or_set "slots-#{rounded_time_for_cache}" do
         (available_slots - taken_slots).to_json
       end
@@ -104,7 +104,7 @@ module ScreendoorAppointmentDropdown
 
     def rounded_time_for_cache
       time = Time.now
-      step = 5 * 60
+      step = 3 * 60
       Time.at((time.to_r / step).round * step).utc.to_s
     end
   end

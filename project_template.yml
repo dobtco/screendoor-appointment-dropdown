@@ -1,0 +1,36 @@
+---
+project_params:
+  after_response_email_method: 1
+  after_response_page_method: 1
+  after_response_page_html:
+  identification_level: 2
+  automatically_approve_edits: false
+  automatically_release_responses_for_edits: false
+  description:
+  enable_qa: false
+  enable_signatures: false
+  hide_responder_names: false
+  iframe_skip_preview: true
+  payment_amount_cents:
+  require_payment: false
+  statuses_visible_to_responders: false
+  summary:
+  name: DOBT Office Hours [Demo]
+  language_base: submission
+  only_allow_one_response: false
+response_fields:
+- label: Choose a meeting time
+  field_options:
+    options:
+    - label: Loading options...
+      checked: false
+    include_blank_option: false
+  required: true
+  blind: false
+  admin_only: false
+  type: ResponseFieldDropdown
+rating_fields: []
+labels: []
+statuses:
+- name: Open
+- name: Archived
