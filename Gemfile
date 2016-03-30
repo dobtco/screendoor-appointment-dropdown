@@ -1,5 +1,8 @@
 source 'https://rubygems.org'
 
+gem 'activesupport'
+gem 'http'
+gem 'mini_cache'
 gem 'rack-throttle'
 gem 'sinatra'
 
