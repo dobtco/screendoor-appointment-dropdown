@@ -1,6 +1,5 @@
 require 'sinatra/base'
 require 'sinatra/cross_origin'
-require 'rack/throttle'
 require 'json'
 require 'active_support/all'
 require 'http'
@@ -15,10 +14,6 @@ module ScreendoorAppointmentDropdown
     configure :development do
       require 'dotenv'
       Dotenv.load
-    end
-
-    configure :production do
-      use Rack::Throttle::Interval
     end
 
     before do
