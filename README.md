@@ -1,7 +1,7 @@
 Screendoor Appointment Dropdown
 ----
 
-This is a simple integration that allows for adding an "appointment time" dropdown to your Screendoor forms. Once an appointment time is chosen, it is no longer available to other respondents.
+This is a simple integration that allows for adding an "appointment time" dropdown to your [Screendoor](https://www.dobt.co/screendoor/) forms. Once an appointment time is chosen, it is no longer available to other respondents.
 
 The appointment times are generated based on the current date. By default, appointments can be made more than one week, but no further than one month in advance. Appointments are available on Mondays and Tuesdays between 1-4pm.
 
